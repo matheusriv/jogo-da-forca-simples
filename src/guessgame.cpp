@@ -65,6 +65,11 @@ void guessgame::word_guessing_game(){
             pontuacao -= 1;
             num_of_wrong_guesses++;
         }
+        else if(matches == -1){
+            cout << "Você já adivinhou essa letra!" << endl;
+            pontuacao -= 1;
+            num_of_wrong_guesses++;
+        }
         else{
             cout << "Letra está na palavra!" << endl;
             for(int j=0; j<matches; j++) 
@@ -148,13 +153,13 @@ void guessgame::random_word(){
     } 
 }
 
-int guessgame::letter_fill(char guess, string secret_word, string & guess_word){
+int guessgame::letter_fill(char letter_guess, string palavra_rodada, string & unknown){ 
     int matches = 0;
-    for(int i = 0; i<secret_word.length(); i++){
-        if(guess == guess_word[i])
-            return 0;
-        if(guess == secret_word[i]){
-            guess_word[i] = guess;
+    for(int i = 0; i<palavra_rodada.length(); i++){
+        if(letter_guess == unknown[i])
+            return -1;
+        if(letter_guess == palavra_rodada[i]){
+            unknown[i] = letter_guess;
             matches++;
         }
     }
