@@ -17,13 +17,9 @@ void guessgame::initialize(){
     cout << "\n---- Bem vindo ----" << endl
          << "-- Jogo da Forca --" << endl
          << " Você tem 6 tentativas para adivinhar a palavra" << endl
-         << " Digite 'i' para iniciar o jogo ou 'r' para rever os scores anteriores! \n";
+         << " Digite 'r' para rever os scores anteriores ou qualquer outra letra para iniciar o jogo! \n";
     
-    while(true){
-        cin>>std::ws>>choice;
-        if(choice == "i" || choice == "r")
-            break;
-    }
+    cin>>std::ws>>choice;
 
     if(choice == "r"){ 
         show_scores();
