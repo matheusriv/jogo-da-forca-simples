@@ -48,7 +48,6 @@ void guessgame::word_guessing_game(){
         cout << "\nPontos: " << pontuacao << endl;
 
         if(num_of_wrong_guesses > 0){
-            cout << "num_of_wrong_guesses: " << num_of_wrong_guesses << endl;
             vector<string> c = corpo.get_body(num_of_wrong_guesses);
             for(int i = 0; i<c.size(); i++) {
                 cout << c[i] << endl;
