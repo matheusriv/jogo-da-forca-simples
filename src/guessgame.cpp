@@ -54,7 +54,6 @@ void guessgame::word_guessing_game(){
             for(int i = 0; i<c.size(); i++) {
                 cout << c[i] << endl;
             }
-            c.clear();
         }
 
         cout << unknown; 
@@ -110,7 +109,7 @@ void guessgame::process_action(){
     }
     else{
         cout << "Digite o seu nome: " << endl;
-        cin >> name;
+        cin >> choice;
         score novo_score(name, palavras_acertadas, pontuacao);
         scores.push_back(novo_score);
         cout << "Saindo do jogo...\n";
@@ -121,14 +120,14 @@ void guessgame::process_action(){
 void guessgame::loop(){
     initialize();
     while(int_game_over == 0){
-        get_random_word();
+        random_word();
         word_guessing_game();
         if(int_game_over == 1) break;
         process_action();
     } 
 }
 
-void guessgame::get_random_word(){
+void guessgame::random_word(){
     while(true){
         std::random_device random_device;
         std::mt19937 engine{random_device()};

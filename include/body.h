@@ -9,15 +9,15 @@ class body{
     public:
         body(){};
         std::vector<std::string> get_body(int i){
-            if(i=1)
+            if(i == 1)
                 return corpo1;
-            else if(i=2)
+            else if(i == 2)
                 return corpo2;
-            else if(i=3)
+            else if(i == 3)
                 return corpo3;
-            else if(i=4)
+            else if(i == 4)
                 return corpo4;
-            else if(i=5)
+            else if(i == 5)
                 return corpo5;
             else
                 return corpo6;

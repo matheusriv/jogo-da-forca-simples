@@ -43,13 +43,10 @@ void processfile::initialize_infos(guessgame &g, int argc, char *argv[]){
             for(auto j = 0; j<out[1].size(); j++){
                 if(isspace(out[1][j])){ 
                     tokenize(out[1], ' ', palavras);
-                    //cout << out[1] << " tem espaco em branco" << endl;
                     break;
                 }
-                if(j == out[1].size()-1){
-                    //cout << out[1] << " nao tem espaco em branco" << endl;
+                if(j == out[1].size()-1)
                     palavras.push_back(out[1]);
-                }
             }
             score novo_score(out[0], palavras, stoi(out[2]));
             game->add_scores(novo_score);

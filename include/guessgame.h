@@ -23,9 +23,7 @@ class guessgame{
     private:
         int max_tentativas = 6;
         int int_game_over = 0;
-        int pontuacao;
-        int num_of_wrong_guesses;
-        int matches;
+        int pontuacao, num_of_wrong_guesses, matches;
         char letter;
         body corpo;
         std::vector<std::string> palavras;
@@ -33,10 +31,9 @@ class guessgame{
         std::vector<std::string> palavras_acertadas;
         std::string palavra_rodada;
         std::string choice;
-        std::string name;
         std::vector<score> scores;
 
-        void get_random_word();
+        void random_word();
         void word_guessing_game();
         void process_action();
         int letter_fill(char guess, std::string secretword, std::string & guessword);
