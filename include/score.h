@@ -14,7 +14,6 @@ class score{
 
     public:
         score(std::string nome, std::vector<std::string> palavras_acert, int pont);
-        score(std::string nome, int pont);
         void print_score_infos();
         void save_scores_ofs(std::ofstream & ofs);
 };

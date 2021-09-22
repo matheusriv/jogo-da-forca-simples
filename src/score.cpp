@@ -10,11 +10,6 @@ score::score(string nome, vector<string> palavras_acert, int pont){
     }
 }
 
-score::score(string nome, int pont){
-    this->nome_user = nome;
-    this->pontuacao = pont;
-}
-
 void score::print_score_infos(){
     cout << nome_user << " - " << "Pontuação: " << pontuacao << " - ";
     cout << "Palavras acertadas: ";
