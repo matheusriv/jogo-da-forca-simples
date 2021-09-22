@@ -38,6 +38,7 @@ class guessgame{
         void process_action();
         int letter_fill(char guess, std::string secretword, std::string & guessword);
         bool search_palavras_sorteadas(std::string word);
+        std::vector<score>::iterator search_scores_nome(std::string nome);
         void show_scores();
 
 };

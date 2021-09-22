@@ -26,7 +26,6 @@ void guessgame::initialize(){
     }
 
     if(choice == "r"){ 
-        cout << "-- Scores Anteriores --" << endl;
         show_scores();
     }
 
@@ -110,8 +109,15 @@ void guessgame::process_action(){
     else{
         cout << "Digite o seu nome: " << endl;
         cin >> choice;
-        score novo_score(name, palavras_acertadas, pontuacao);
-        scores.push_back(novo_score);
+        auto it = search_scores_nome(choice);
+        if(it != scores.end()){
+            //cout << "score com esse nome ja cadastrado\n";
+            it->edit_infos(palavras_acertadas, pontuacao);
+        }
+        else{
+            score novo_score(choice, palavras_acertadas, pontuacao);
+            scores.push_back(novo_score);
+        }
         cout << "Saindo do jogo...\n";
         int_game_over = 1;
     }
@@ -135,7 +141,7 @@ void guessgame::random_word(){
         string random = palavras[dist(engine)];
 
         if(!search_palavras_sorteadas(random)){ 
-            cout << "palavra sorteada: " << random << endl;
+            //cout << "palavra sorteada: " << random << endl;
             palavras_sorteadas.push_back(random);
             palavra_rodada = random;
             break;
@@ -168,8 +174,10 @@ void guessgame::show_scores(){
     if(scores.size() == 0)
         cout << "Sem scores anteriores!" << endl;
     else{
+        cout << "--- Scores Anteriores ---" << endl;
         for(int i=0; i<scores.size(); i++)
             scores[i].print_score_infos();
+        cout << "------------------------\n";
     }
 }
 
@@ -184,4 +192,13 @@ bool guessgame::search_palavras_sorteadas(string word){
     else{
         return false;
     }
+}
+
+std::vector<score>::iterator guessgame::search_scores_nome(string nome){
+    auto it = std::find_if(scores.begin(), scores.end(), 
+                            [&](score entrada){ 
+                                    return entrada.get_nome(nome);
+                                });
+
+    return it;
 }

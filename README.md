@@ -18,3 +18,9 @@ Logo após a compilação, para executar o programa gerado use os comandos:
 ```
 ./jogoforca arquivo_palavras.txt arquivo_score.txt
 ```
+
+Utilizando os arquivos da pasta data, por exemplo:
+
+```
+./jogoforca ../data/palavras.txt ../data/score.txt
+```

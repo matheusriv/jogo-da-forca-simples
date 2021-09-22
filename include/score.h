@@ -16,6 +16,8 @@ class score{
         score(std::string nome, std::vector<std::string> palavras_acert, int pont);
         void print_score_infos();
         void save_scores_ofs(std::ofstream & ofs);
+        bool get_nome(std::string nome);
+        void edit_infos(std::vector<std::string> palavras_acert, int pont);
 };
 
 #endif 

@@ -28,3 +28,16 @@ void score::save_scores_ofs(ofstream & ofs){
     ofs << ";";
     ofs << pontuacao << endl;
 }
+
+bool score::get_nome(string nome){
+    if(nome == nome_user)
+        return true;
+    return false;
+}
+
+void score::edit_infos(std::vector<std::string> palavras_acert, int pont){
+    this->pontuacao = pont;
+    for(int i=0; i<palavras_acert.size(); i++){
+        this->palavras_acertadas.push_back(palavras_acert[i]);
+    }
+}
