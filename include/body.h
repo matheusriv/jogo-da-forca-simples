@@ -32,7 +32,7 @@ class body{
         
         std::vector<std::string> corpo4 = { " o ", "/|\\", "   " };
         
-        std::vector<std::string> corpo5 = {  " o ", "/|\\", "/  " };
+        std::vector<std::string> corpo5 = { " o ", "/|\\", "/  " };
         
         std::vector<std::string> corpo6 = { " o ", "/|\\", "/ \\" };
 };
