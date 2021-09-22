@@ -11,8 +11,7 @@ score::score(string nome, vector<string> palavras_acert, int pont){
 }
 
 void score::print_score_infos(){
-    cout << nome_user << " - " << "Pontuação: " << pontuacao << " - ";
-    cout << "Palavras acertadas: ";
+    cout << nome_user << " - " << "Pontuação: " << pontuacao << " - " << "Palavras acertadas: ";
     for(int i=0; i<palavras_acertadas.size(); i++)
         cout << palavras_acertadas[i] << " ";
     cout << endl;
