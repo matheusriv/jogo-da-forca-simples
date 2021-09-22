@@ -2,7 +2,7 @@
 
 Para compilar:
 
-1. Entre na pasta de arquivo, no caso `data`:
+1. Entre na pasta `build`:
 ```
 cd build
 ```
