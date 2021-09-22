@@ -1,0 +1,4 @@
+3
+matheus;palavra franca jogo;29
+andre;jogo;5
+o;torrada;11
