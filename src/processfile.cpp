@@ -28,29 +28,21 @@ void processfile::initialize_infos(guessgame &g, int argc, char *argv[]){
     
     //ler scores
     if(ifs_scores.peek() != ifstream::traits_type::eof()) {
-        string count_user, line;
-        vector<string> lines, out, palavras;
+        string count_user, nome_user, count_words, word, pont;
+        vector<string> palavras;
 
         getline(ifs_scores, count_user);
         
         for(auto i = 0; i<stoi(count_user); i++) {
-            getline(ifs_scores, line);
-            lines.push_back(line);
-        }
-
-        for(auto i = 0; i<lines.size(); i++) {
-            tokenize(lines[i], ';', out);
-            for(auto j = 0; j<out[1].size(); j++){
-                if(isspace(out[1][j])){ 
-                    tokenize(out[1], ' ', palavras);
-                    break;
-                }
-                if(j == out[1].size()-1)
-                    palavras.push_back(out[1]);
+            getline(ifs_scores, nome_user);
+            getline(ifs_scores, count_words);
+            for(auto j=0; i<stoi(count_words); i++) {
+                getline(ifs_scores, word);
+                palavras.push_back(word);
             }
-            score novo_score(out[0], palavras, stoi(out[2]));
+            getline(ifs_scores, pont);
+            score novo_score(nome_user, palavras, stoi(pont));
             game->add_scores(novo_score);
-            out.clear();
             palavras.clear();
         }
     }
@@ -71,7 +63,7 @@ void processfile::save_score(){
 
 }
 
-void processfile::tokenize(std::string const &str, const char delim,
+/*void processfile::tokenize(std::string const &str, const char delim,
             std::vector<std::string> &out){
     size_t start;
     size_t end = 0;
@@ -80,4 +72,4 @@ void processfile::tokenize(std::string const &str, const char delim,
         end = str.find(delim, start);
         out.push_back(str.substr(start, end - start));
     }
-}
+}*/

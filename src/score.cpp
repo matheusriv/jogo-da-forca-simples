@@ -18,14 +18,11 @@ void score::print_score_infos(){
 }
 
 void score::save_scores_ofs(ofstream & ofs){
-    ofs << nome_user << ";";
+    ofs << nome_user << endl;
+    ofs << palavras_acertadas.size() << endl;
     for(int i=0; i<palavras_acertadas.size(); i++){
-        if(i != palavras_acertadas.size()-1)
-            ofs << palavras_acertadas[i] << " ";
-        else
-            ofs << palavras_acertadas[i];
+        ofs << palavras_acertadas[i] << endl;
     }
-    ofs << ";";
     ofs << pontuacao << endl;
 }
 
