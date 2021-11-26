@@ -5,7 +5,7 @@ Este projeto é um jogo da forca simples. O usuário tenta adivinhar a palavra a
 As palavras para adivinhar vem de um arquivo de texto que deve ser passado na linha de comando e a pontuação do usuário é salva num arquivo de texto que também deve ser passado na linha de comando. A cada nova partida, o jogo pergunta se o usuário deseja prosseguir ou encerrar o jogo, quando se decide encerrar o programa pede o nome do usuário e em seguida salva o nome, pontuação e palavras acertadas do usuário no arquivo de texto do score.
 
 
-Para compilar:
+## Para compilar:
 
 1. Entre na pasta `build`:
 ```
